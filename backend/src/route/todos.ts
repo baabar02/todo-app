@@ -45,6 +45,10 @@ router.put("/:id", authenticate, async (req: AuthRequest, res: Response) => {
         ...(completed !== undefined && { completed }),
       },
     });
+    console.log(req.body, "Request body for updating todo");
+    
+    console.log(todo, "Todo updated successfully");
+
     res.json(todo);
   } catch (error) {
     console.log(error); 
